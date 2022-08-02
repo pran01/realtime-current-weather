@@ -1,0 +1,159 @@
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .input-group {
+    height: 3rem;
+    width: 30rem;
+    margin-bottom: 1rem;
+    border-radius: 10rem;
+    position: relative;
+    input[type="text"] {
+      height: 3rem;
+      width: 100%;
+      border-radius: 10rem;
+      border: 0.5px black;
+      box-shadow: 2px 2px 5px 1px black;
+      padding-inline: 2rem;
+      font-size: 1.5rem;
+    }
+    .search-icon {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 0.75rem;
+      right: 15px;
+    }
+  }
+  .glass-container {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    height: 500px;
+    width: 700px;
+    background: inherit;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .glass-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      font-size: 4rem;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 5px 5px 10px black;
+      & > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 5rem;
+      }
+      .city-name {
+        font-size: 1em;
+        .country-code {
+          font-size: 0.5em;
+        }
+      }
+      .current-weather {
+        font-size: 1.25em;
+        & > span {
+          font-size: 0.8em;
+        }
+      }
+      .real-feel {
+        font-size: 0.5em;
+        & > span {
+          font-size: 0.8em;
+        }
+      }
+      .description {
+        font-size: 0.5em;
+        font-style: italic;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .glass-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    filter: blur(5px);
+    background: inherit;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .main-container {
+    .input-group {
+      width: 80%;
+    }
+    .glass-container {
+      width: 80%;
+      height: 0;
+      padding-bottom: 60%;
+      .glass-content {
+        font-size: 4rem;
+        & > div {
+          line-height: 4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    .input-group {
+      height: 2rem;
+      input[type="text"] {
+        height: 2rem;
+        font-size: 1rem;
+      }
+      .search-icon {
+        font-size: 1rem;
+        top: 0.5rem;
+      }
+    }
+    .glass-container {
+      padding-bottom: 90%;
+      .glass-content {
+        font-size: 3rem;
+        & > div {
+          line-height: 4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .main-container {
+    .input-group {
+      width: 80%;
+    }
+    .glass-container {
+      padding-bottom: 90%;
+      .glass-content {
+        font-size: 2rem;
+        & > div {
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
